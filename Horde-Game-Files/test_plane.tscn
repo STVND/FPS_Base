@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs5donapssm87"]
+
+[ext_resource type="PackedScene" uid="uid://jw5nmpdn7nt2" path="res://first_person_controller.tscn" id="1_spbnl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dr3vr"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcxve"]
+size = Vector3(20, 1, 20)
+
+[node name="Test-Plane" type="Node3D"]
+
+[node name="First-Person-Controller" parent="." instance=ExtResource("1_spbnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51289, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_dr3vr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_hcxve")
