@@ -2,12 +2,15 @@ extends CharacterBody3D
 
 
 @export var speed = 5
-@export var fall_acceleration = 75
-@export var jump_impulse = 20
+@export var fall_acceleration = 50
+@export var jump_impulse = 15
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		$game_session_menu.visible = true
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -31,10 +34,7 @@ func _physics_process(delta):
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 	velocity.y -= fall_acceleration * delta
-
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y += jump_impulse
-
+	
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_impulse

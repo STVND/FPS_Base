@@ -1,0 +1,131 @@
+Notes for game
+
+		UI
+			Main menu
+				access test level/lobby
+				create game session
+					level select
+				settings
+			In Game Menu
+				exit session
+				exit game
+				settings
+				
+		Gameplay
+			Game Flow
+				Wave based
+					Between waves is downtime for players to replenish or reposition
+					GOW Horde inspired
+						Maximum number of rounds or endless?
+						As waves increase #ofEnemies increase and tiers increase at set intervals
+						As tiers increase new enemy types appear
+						
+						
+			Economy
+				Point based
+					Dealing damage to mobs generates points
+						currently they should be simplified and all damage give the equivalent number of points
+						regardless of total amount
+						
+					Final blow on an enemy grants additional points
+						Increases based on enemy tier
+				
+			Enemies
+				Limited number of types to reduce complexity
+					tier 1 
+						melee enemy
+					tier 2
+						ranged enemy
+					tier 3 
+						heavy variations + support enemies
+					tier 4
+						elemental variations
+					tier 5
+						boss enemy?
+						
+						
+				Game Director
+				
+					might be out of scope but implementing an under the hood economy for a simple algorithm to spawn
+					new enemies should be looked at. 
+					
+					All enemies could be spawned at start of round based on JSON file or randomly selected based on 
+					enemy tier/difficulty value
+					
+					(potentially shorter rounds, could be lopsided at the start of the round instead of
+					creating interesting experience/scaling difficulty in round)
+					
+					--OR--
+					
+					points should be allotted for each tier of enemy
+						each enemy is given a difficulty value based on their tier
+						AI looks at total difficulty value currently on the map and decides whether to add new enemies
+						
+					(difficult to implement instead and potentially low gain if it's too complex)
+						
+					--OR--
+					
+					simplified enemy counts that are spawned at regular intervals as long as there is 'space' available
+					
+					(easier to implement, potentially less interesting experience every run but consistent, longer rounds)
+				
+			Player
+				Movement
+					Simplified movement
+						Basic WASD ✔️
+						Looking
+						Combat
+						Interaction
+							Interact with in-session shop for equipment
+							Interact with equipment
+
+				Equipment
+					Checkpoints
+						(Placeable/Moveable?)
+						Able to purchase new weapon
+						Able to purchase ammo for reduced price
+						Specialty ammo?
+							possible better to make mods available
+						Able to purchase or replenish basic equipment
+						
+					Weapons
+						Notes:
+						Each weapon with an alternative should have a small tradeoff but each weapon in the same class
+						should have an equivalent DPS value or near equivalent DPS value with an additional effect.
+						
+						ie: if one weapon can incur 100 DPS then other weapons in the same class should deal 100 DPS
+						or 80 DPS + apply a status effect
+						
+						Melee
+							Knife
+							Crowbar
+				
+						Guns
+							short list of weapons 
+							GOW limited
+							2 primaries to choose from
+							2/3 secondaries
+				
+						Basic throwables
+							Grenade
+								Explosive
+								AOE DOT
+					
+						Some specials
+							Monkey bombs?
+							Turrets?
+							Placeable Defenses?
+				
+				
+		Basic environment options
+			Design notes:
+				Go for modular
+				Attempt to have 'holdout' points
+					'holdout' points shouldn't just be indefinelty holdable
+						should have weakpoint or secondary entrance to encourage movement
+						
+			Casino
+			Temple/Jungle
+			Zoo
+			Museum
+		

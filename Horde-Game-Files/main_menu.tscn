@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://oc3lxnj5pt43"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_8tia4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8tia4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 665.0
+color = Color(0.458824, 0.623529, 0.6, 1)
+
+[node name="Load Test Level" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 285.0
+offset_right = 631.0
+offset_bottom = 316.0
+text = "Load Test Level"
+
+[node name="Exit Game" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 335.0
+offset_right = 631.0
+offset_bottom = 366.0
+text = "Exit Game
+"
+
+[connection signal="pressed" from="ColorRect/Load Test Level" to="." method="_on_load_test_level_pressed"]
+[connection signal="pressed" from="ColorRect/Exit Game" to="." method="_on_exit_game_pressed"]

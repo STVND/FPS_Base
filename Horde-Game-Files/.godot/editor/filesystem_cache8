@@ -1,5 +1,6 @@
 2a60927148abd1d33b818b535e306557
-::res://::1675539806
-first_person_controller.tscn::PackedScene::678961282042584133::1675539742::0::1::::<><>::
+::res://::1675542005
+first_person_controller.gd::GDScript::-1::1675541045::0::1::::<>CharacterBody3D<>::
+first_person_controller.tscn::PackedScene::678961282042584133::1675541047::0::1::::<><>::res://first_person_controller.gd
 icon.svg::CompressedTexture2D::2090704473794643409::1675492333::1675492337::1::::<><>::
-test_plane.tscn::PackedScene::3711959037402304962::1675539357::0::1::::<><>::uid://wpqr353j86eo
+test_plane.tscn::PackedScene::3711959037402304962::1675541082::0::1::::<><>::uid://jw5nmpdn7nt2

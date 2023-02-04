@@ -1,3 +1,7 @@
-res://first_person_controller.tscn
 res://test_plane.tscn
+res://first_person_controller.tscn
+res://main_menu.tscn
+res://main_menu.gd
+res://game_session_menu.tscn
+res://game_session_menu.gd
 res://first_person_controller.gd
