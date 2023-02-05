@@ -33,13 +33,13 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_pressed("move_right"):
-		direction.x += 1
+		direction += transform.basis.x
 	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
+		direction -= transform.basis.x
 	if Input.is_action_pressed("move_backward"):
-		direction.z += 1
+		direction += transform.basis.z
 	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
+		direction -= transform.basis.z
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
