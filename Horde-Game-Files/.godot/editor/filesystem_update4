@@ -1,4 +1,4 @@
-res://game_session_menu.tscn
+res://placeholdel_environment_tileset.tscn
 res://test_plane.tscn
+res://placeholder-assets/environment/placeholder-environment.tres
 res://first_person_controller.tscn
-res://first_person_controller.gd

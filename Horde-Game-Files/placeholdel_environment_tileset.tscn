@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceurrxssn1pv7"]
+
+[ext_resource type="PackedScene" uid="uid://bdqsqmt5epg4o" path="res://placeholder-assets/environment/casino-rough.glb" id="1_cyyo7"]
+
+[node name="casino-rough" instance=ExtResource("1_cyyo7")]
