@@ -1,4 +1,9 @@
-res://placeholdel_environment_tileset.tscn
+res://fragment.tscn
+res://fragment.gd
+res://objects_that_break.tscn
+res://objects_that_break.gd
 res://test_plane.tscn
-res://placeholder-assets/environment/placeholder-environment.tres
 res://first_person_controller.tscn
+res://bullet.tscn
+res://first_person_controller.gd
+res://weapon_cast.gd

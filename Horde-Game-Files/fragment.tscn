@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc6335uc02ehb"]
+
+[ext_resource type="Script" path="res://fragment.gd" id="1_4ltsi"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_4ltsi")
+lifetime = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -6,6 +6,9 @@ extends CharacterBody3D
 @export var mouse_sensitivity = .005
 @export var sprint_multiplier = 1.4
 @export var total_speed = 0
+@onready var raycast = $Camera3D/RayCast3D
+
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -25,6 +28,10 @@ func _physics_process(delta):
 	var direction = Vector3.ZERO
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if Input.is_action_pressed("left_click"):
+		if raycast.collide_with_bodies:
+			pass
+		
 	if $game_session_menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
@@ -38,6 +45,7 @@ func _physics_process(delta):
 		direction += transform.basis.z
 	if Input.is_action_pressed("move_forward"):
 		direction -= transform.basis.z
+
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
