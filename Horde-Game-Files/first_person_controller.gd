@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
-@export var speed = 5
-@export var fall_acceleration = 75
-@export var jump_impulse = 15
-@export var mouse_sensitivity = .005
-@export var sprint_multiplier = 1.4
-@export var total_speed = 0
-@onready var raycast = $Camera3D/RayCast3D
+@export var speed: float = 10
+@export var fall_acceleration: int = 50
+@export var jump_impulse: int = 15
+@export var mouse_sensitivity: float = .005
+@export var sprint_multiplier: float = 1.4
+@export var total_speed: float = 0
+
+@onready var cam = $Camera3D
 
 
 
@@ -28,9 +29,13 @@ func _physics_process(delta):
 	var direction = Vector3.ZERO
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if Input.is_action_pressed("left_click"):
-		if raycast.collide_with_bodies:
-			pass
+	if Input.is_action_just_pressed("left_click"):
+		var projectile: Bullet = preload("res://bullet.tscn").instantiate()
+		projectile.position = cam.global_position
+		projectile.transform.basis = cam.global_transform.basis
+		get_parent().add_child(projectile)
+
+		pass
 		
 	if $game_session_menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -349,7 +349,7 @@ transform = Transform3D(5, 0, 0, 0, 10, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("BoxShape3D_uem54")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, 0.1, 0)
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, 0, 0)
 layers = 5
 mesh = SubResource("PlaneMesh_p2d7p")
 
@@ -360,4 +360,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_dmdih")
 
 [node name="objects_that_break" parent="." instance=ExtResource("2_pmr36")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61548, -9.04957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.514, 1, -9.05)

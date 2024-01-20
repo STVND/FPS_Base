@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcq4hdgreq6hx"
+path="res://.godot/imported/destroyed-cube.obj-cf58820c58058ebc4e389abc9515e6be.mesh"
+
+[deps]
+
+files=["res://.godot/imported/destroyed-cube.obj-cf58820c58058ebc4e389abc9515e6be.mesh"]
+
+source_file="res://placeholder-assets/environment/destroyed-cube.obj"
+dest_files=["res://.godot/imported/destroyed-cube.obj-cf58820c58058ebc4e389abc9515e6be.mesh", "res://.godot/imported/destroyed-cube.obj-cf58820c58058ebc4e389abc9515e6be.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

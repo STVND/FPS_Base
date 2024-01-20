@@ -1,9 +1,8 @@
-res://fragment.tscn
-res://fragment.gd
-res://objects_that_break.tscn
-res://objects_that_break.gd
+res://bullet.tscn
 res://test_plane.tscn
 res://first_person_controller.tscn
-res://bullet.tscn
-res://first_person_controller.gd
-res://weapon_cast.gd
+res://objects_that_break.tscn
+res://fragment.tscn
+res://bullet.gd
+res://objects_that_break.gd
+res://fragment.gd
