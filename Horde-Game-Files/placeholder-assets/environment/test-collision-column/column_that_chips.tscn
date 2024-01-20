@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpjy2c1kbi01n"]
+
+[ext_resource type="Script" path="res://objects_that_chip.gd" id="1_t6nab"]
+[ext_resource type="PackedScene" uid="uid://d1snfo7f64bme" path="res://placeholder-assets/environment/test-collision-column/pillar-stationary.glb" id="2_slr4v"]
+[ext_resource type="PackedScene" uid="uid://dt27a430iiivr" path="res://placeholder-assets/environment/test-collision-column/pillar-middle.glb" id="3_es427"]
+
+[node name="objects_that_chip" type="Node3D"]
+script = ExtResource("1_t6nab")
+
+[node name="destroyed_object" type="Node3D" parent="."]
+
+[node name="pillar-middle" parent="destroyed_object" instance=ExtResource("3_es427")]
+
+[node name="pillar-stationary" parent="." instance=ExtResource("2_slr4v")]

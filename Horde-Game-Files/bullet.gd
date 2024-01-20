@@ -25,11 +25,17 @@ func _physics_process(delta: float) -> void:
 	
 	if ray.is_colliding():
 		mesh.visible = false
-		queue_free()
 		if ray.get_collider().is_in_group("destructible"):
+			var incident_vector:Vector3 = global_rotation.normalized()
+			var collision_normal:Vector3 = ray.get_collision_normal()
+			var reflect_vector:Vector3 = -2 * (incident_vector.dot(collision_normal)) * collision_normal + incident_vector
 			
-			ray.get_collider().hit(ray.get_collision_normal(), damage)
-			pass
+			reflect_vector.x = (reflect_vector.x + collision_normal.x)/2
+			reflect_vector.y = (reflect_vector.y + collision_normal.y)/2
+			reflect_vector.z = (reflect_vector.z + collision_normal.z)/2
+			
+			ray.get_collider().hit(reflect_vector, 1)
+		queue_free()
 		
 	
 	var current_life: int = 0

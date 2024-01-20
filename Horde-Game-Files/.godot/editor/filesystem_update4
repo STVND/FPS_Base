@@ -1,8 +1,12 @@
-res://fragment.tscn
-res://fragment.gd
 res://test_plane.tscn
+res://first_person_controller.gd
 res://first_person_controller.tscn
-res://objects_that_break.tscn
+res://objects_that_chip.tscn
+res://fragment.tscn
 res://bullet.tscn
-res://objects_that_break.gd
+res://objects_that_chip.gd
+res://placeholder-assets/environment/test-collision-column/column_that_chips.tscn
+res://chipped_environment_spawn.tscn
+res://fragment.gd
+res://objects_that_break.tscn
 res://bullet.gd
