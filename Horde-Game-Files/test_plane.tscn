@@ -19,6 +19,8 @@ volumetric_fog_detail_spread = 2.7991
 
 [node name="First-Person-Controller" parent="." instance=ExtResource("1_spbnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45664, 0)
+collision_layer = 5
+collision_mask = 5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 20, 0)

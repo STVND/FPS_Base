@@ -1,8 +1,8 @@
-res://bullet.tscn
+res://fragment.tscn
+res://fragment.gd
 res://test_plane.tscn
 res://first_person_controller.tscn
 res://objects_that_break.tscn
-res://fragment.tscn
-res://bullet.gd
+res://bullet.tscn
 res://objects_that_break.gd
-res://fragment.gd
+res://bullet.gd

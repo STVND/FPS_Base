@@ -1,13 +1,13 @@
 extends Node3D
 class_name Bullet
 
-
+@export var damage: int = 10
 @export var lifetime: int = 1
 @export var sphere_diameter: float = 1
 
 @onready var bullet_body = $MeshInstance3D/Area3D/CollisionShape3D
 @onready var direction: Vector3 = Vector3.ZERO
-@onready var speed: float = 40	
+@onready var speed: float = 20	
 
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
@@ -25,6 +25,12 @@ func _physics_process(delta: float) -> void:
 	
 	if ray.is_colliding():
 		mesh.visible = false
+		queue_free()
+		if ray.get_collider().is_in_group("destructible"):
+			
+			ray.get_collider().hit(ray.get_collision_normal(), damage)
+			pass
+		
 	
 	var current_life: int = 0
 	current_life += 1

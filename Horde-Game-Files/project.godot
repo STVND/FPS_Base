@@ -15,6 +15,10 @@ run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.3", "Double Precision", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+destructible="this object can be destroyed"
+
 [input]
 
 move_forward={
