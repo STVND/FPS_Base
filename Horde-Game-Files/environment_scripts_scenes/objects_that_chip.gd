@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 func create_destructible():
 	for child in destroyed_object.get_children():
 			if child is MeshInstance3D:
-				var frag:Fragment = preload("res://fragment.tscn").instantiate()
+				var frag:Fragment = preload("res://environment_scripts_scenes/fragment.tscn").instantiate()
 				frag.init_from_main(child)
 				frag.set_collision_layer_value(1, true)
 				frag.set_collision_mask_value(1, true)

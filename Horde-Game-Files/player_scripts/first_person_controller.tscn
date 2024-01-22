@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://jw5nmpdn7nt2"]
 
-[ext_resource type="Script" path="res://first_person_controller.gd" id="1_hetsw"]
-[ext_resource type="PackedScene" uid="uid://be4g02partwkv" path="res://game_session_menu.tscn" id="2_ln7co"]
+[ext_resource type="Script" path="res://player_scripts/first_person_controller.gd" id="1_hetsw"]
+[ext_resource type="PackedScene" uid="uid://be4g02partwkv" path="res://ui_scripts_scenes/game_session_menu.tscn" id="2_ln7co"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gpjbk"]
 

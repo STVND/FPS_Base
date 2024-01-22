@@ -30,7 +30,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if Input.is_action_just_pressed("left_click"):
-		var projectile: Bullet = preload("res://bullet.tscn").instantiate()
+		var projectile: Bullet = preload("res://weapon_scripts_scenes/bullet.tscn").instantiate()
 		projectile.position = cam.global_position - Vector3(0, .3, 0)
 		projectile.transform.basis = cam.global_transform.basis
 		get_parent().add_child(projectile)

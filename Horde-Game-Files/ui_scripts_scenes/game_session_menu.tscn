@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://be4g02partwkv"]
 
-[ext_resource type="Script" path="res://game_session_menu.gd" id="1_07gb7"]
+[ext_resource type="Script" path="res://ui_scripts_scenes/game_session_menu.gd" id="1_07gb7"]
+
 
 [node name="game_session_menu" type="ColorRect"]
 anchors_preset = 15

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bs5donapssm87"]
 
-[ext_resource type="PackedScene" uid="uid://jw5nmpdn7nt2" path="res://first_person_controller.tscn" id="1_spbnl"]
+[ext_resource type="PackedScene" uid="uid://jw5nmpdn7nt2" path="res://player_scripts/first_person_controller.tscn" id="1_spbnl"]
 [ext_resource type="PackedScene" uid="uid://dpjy2c1kbi01n" path="res://placeholder-assets/environment/test-collision-column/column_that_chips.tscn" id="3_b76kf"]
-[ext_resource type="PackedScene" uid="uid://b8ugblf5tkvae" path="res://objects_that_chip.tscn" id="3_f2knc"]
+[ext_resource type="PackedScene" uid="uid://b8ugblf5tkvae" path="res://environment_scripts_scenes/objects_that_chip.tscn" id="3_f2knc"]
 
 [sub_resource type="Environment" id="Environment_rf3sj"]
 volumetric_fog_density = 0.01

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5u7kbh8v7udy"]
+
+[ext_resource type="Script" path="res://ui_scripts_scenes/test-script.gd" id="1_8lpr6"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_8lpr6")
+
+[node name="group-1" type="Node" parent="."]
+
+[node name="sphere-1" type="Node" parent="group-1" groups=["sphere"]]
+
+[node name="cube-1" type="Node" parent="group-1" groups=["cube"]]
+
+[node name="group-2" type="Node" parent="."]
+
+[node name="sphere-2" type="Node" parent="group-2" groups=["sphere"]]
+
+[node name="cube-2" type="Node" parent="group-2" groups=["cube"]]
