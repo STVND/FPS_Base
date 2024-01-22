@@ -6,13 +6,16 @@ extends CharacterBody3D
 @export var mouse_sensitivity: float = .005
 @export var sprint_multiplier: float = 1.4
 @export var total_speed: float = 0
-
 @onready var cam = $Camera3D
 
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func _ready() -> void:
+	Global.player = self
+	$State_Machine._initialize_states()
 
 func _input(event):
 	if event is InputEventMouseMotion and $game_session_menu.visible == false:
@@ -29,27 +32,27 @@ func _physics_process(delta):
 	var direction = Vector3.ZERO
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if Input.is_action_just_pressed("left_click"):
-		var projectile: Bullet = preload("res://weapon_scripts_scenes/bullet.tscn").instantiate()
-		projectile.position = cam.global_position - Vector3(0, .3, 0)
-		projectile.transform.basis = cam.global_transform.basis
-		get_parent().add_child(projectile)
-
-		pass
+	
 		
 	if $game_session_menu.visible == true:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	if Input.is_action_pressed("move_right"):
-		direction += transform.basis.x
-	if Input.is_action_pressed("move_left"):
-		direction -= transform.basis.x
-	if Input.is_action_pressed("move_backward"):
-		direction += transform.basis.z
-	if Input.is_action_pressed("move_forward"):
-		direction -= transform.basis.z
+		if Input.is_action_pressed("move_right"):
+			direction += transform.basis.x
+		if Input.is_action_pressed("move_left"):
+			direction -= transform.basis.x
+		if Input.is_action_pressed("move_backward"):
+			direction += transform.basis.z
+		if Input.is_action_pressed("move_forward"):
+			direction -= transform.basis.z
+			
+		if Input.is_action_just_pressed("left_click"):
+			var projectile: Bullet = preload("res://weapon_scripts_scenes/bullet.tscn").instantiate()
+			projectile.position = cam.global_position - Vector3(0, .3, 0)
+			projectile.transform.basis = cam.global_transform.basis
+			get_parent().add_child(projectile)
 
 
 	if direction != Vector3.ZERO:
@@ -69,3 +72,6 @@ func _physics_process(delta):
 		velocity.y = jump_impulse
 
 	move_and_slide()
+
+	
+	

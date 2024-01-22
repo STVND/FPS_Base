@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://jw5nmpdn7nt2"]
+[gd_scene load_steps=7 format=3 uid="uid://jw5nmpdn7nt2"]
 
 [ext_resource type="Script" path="res://player_scripts/first_person_controller.gd" id="1_hetsw"]
 [ext_resource type="PackedScene" uid="uid://be4g02partwkv" path="res://ui_scripts_scenes/game_session_menu.tscn" id="2_ln7co"]
+[ext_resource type="Script" path="res://player_scripts/Movement_State.gd" id="3_4bg8x"]
+[ext_resource type="Script" path="res://player_scripts/Player_State_Machine.gd" id="3_r1eng"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gpjbk"]
 
@@ -16,6 +18,7 @@ script = ExtResource("1_hetsw")
 shape = SubResource("CylinderShape3D_gpjbk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("CapsuleMesh_ah4p1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -27,3 +30,9 @@ enable_shadows = true
 
 [node name="game_session_menu" parent="." instance=ExtResource("2_ln7co")]
 visible = false
+
+[node name="State_Machine" type="Node" parent="."]
+script = ExtResource("3_r1eng")
+
+[node name="Movement_State" type="Node" parent="State_Machine"]
+script = ExtResource("3_4bg8x")

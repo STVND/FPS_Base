@@ -29,11 +29,5 @@ func create_destructible():
 			if child is MeshInstance3D:
 				var frag:Fragment = preload("res://environment_scripts_scenes/fragment.tscn").instantiate()
 				frag.init_from_main(child)
-				frag.set_collision_layer_value(1, true)
-				frag.set_collision_mask_value(1, true)
-				frag.set_collision_layer_value(2, true)
-				frag.set_collision_mask_value(2, true)
-				frag.set_sleeping(true)
-				frag.add_to_group("destructible")
 				#frag.wall_health.set_res(1)
 				parent.add_child(frag)

@@ -1,7 +1,7 @@
 extends RigidBody3D
 class_name Fragment
 
-@export var explosion_speed:float = 20
+@export var explosion_speed:float = 10
 @export var lifetime:float = 1
 @onready var elapsed_time:float = 0
 @onready var wall_health:General_Resource = General_Resource.new()
@@ -16,19 +16,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	if is_freeze_enabled():
-		pass
-	else:
+	if !is_freeze_enabled():
 		elapsed_time += delta
-		if self.get_collision_layer_value(1):
-			self.set_collision_layer_value(1, false)
-			self.set_collision_mask_value(1, false)
-			self.set_collision_layer_value(3, true)
-			self.set_collision_mask_value(3, true)
+
+			
 	
 	if elapsed_time > lifetime:
-		if self.is_sleeping() == false:
-			self.set_sleeping(true)
+		if !self.sleeping:
+			set_sleeping(true)
+			PROCESS_MODE_DISABLED
+			self.set_collision_layer_value(1, false)
+			self.set_collision_mask_value(1, false)
+
 
 			
 		
@@ -37,10 +36,17 @@ func init_from_main(source:MeshInstance3D):
 	
 	var mesh_inst:MeshInstance3D = source.duplicate()
 	mesh_inst.transform = Transform3D.IDENTITY
+
 	add_child(mesh_inst)
 	
 	$CollisionShape3D.shape = source.mesh.create_convex_shape()
 	$CollisionShape3D.shape.margin = .001
+	
+	set_collision_layer_value(1, true)
+	set_collision_mask_value(1, true)
+	set_freeze_enabled(true)
+	
+	set_sleeping(true)
 	
 func hit(expl_normal:Vector3, bull_dam:int):
 	if wall_health.get_res() == 0:
@@ -52,6 +58,9 @@ func hit(expl_normal:Vector3, bull_dam:int):
 		frag_impulse *= ((randi() % 15) / 10) + .5
 		set_freeze_enabled(false)
 		apply_impulse(frag_impulse)
+		apply_torque_impulse(Vector3(randfn(-PI,PI),randfn(-PI,PI),randfn(-PI,PI)))
+
+
 		
 	else:
 		wall_health.sub_res(bull_dam)

@@ -34,14 +34,16 @@ mesh = SubResource("PlaneMesh_p2d7p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_dmdih")
 
-[node name="environment" type="Node" parent="."]
+[node name="environment_objects" type="Node" parent="."]
 
-[node name="objects_that_chip" parent="environment" instance=ExtResource("3_b76kf")]
+[node name="objects_that_chip" parent="environment_objects" instance=ExtResource("3_b76kf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.57277)
 
-[node name="objects_that_chip2" parent="environment" instance=ExtResource("3_f2knc")]
+[node name="objects_that_chip2" parent="environment_objects" instance=ExtResource("3_f2knc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57778, -11.8363)

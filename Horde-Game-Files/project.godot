@@ -15,6 +15,10 @@ run/main_scene="res://ui_scripts_scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Double Precision", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://global_script/Global.gd"
+
 [global_group]
 
 destructible="this object can be destroyed"
@@ -54,7 +58,7 @@ left_click={
 
 [physics]
 
-common/physics_ticks_per_second=10
+common/physics_ticks_per_second=120
 3d/default_gravity=7.0
 
 [rendering]
