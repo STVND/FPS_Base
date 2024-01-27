@@ -1,0 +1,7 @@
+res://environment_scripts_scenes/test_plane.tscn
+res://player_scripts/first_person_controller.tscn
+res://placeholder-assets/environment/test-collision-column/column_that_chips.tscn
+res://weapon_scripts_scenes/bullet.tscn
+res://environment_scripts_scenes/chipped_environment_spawn.tscn
+res://environment_scripts_scenes/objects_that_chip.tscn
+res://player_scripts/first_person_controller.gd

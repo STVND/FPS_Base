@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs5donapssm87"]
+
+[ext_resource type="PackedScene" uid="uid://jw5nmpdn7nt2" path="res://player_scripts/first_person_controller.tscn" id="1_spbnl"]
+[ext_resource type="PackedScene" uid="uid://b8ugblf5tkvae" path="res://environment_scripts_scenes/objects_that_chip.tscn" id="3_f2knc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tdktl"]
+
+[sub_resource type="Sky" id="Sky_cxx81"]
+sky_material = SubResource("ProceduralSkyMaterial_tdktl")
+
+[sub_resource type="Environment" id="Environment_rf3sj"]
+background_mode = 2
+sky = SubResource("Sky_cxx81")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+glow_enabled = true
+glow_normalized = true
+volumetric_fog_albedo = Color(0.819608, 1, 0.992157, 1)
+volumetric_fog_length = 500.0
+volumetric_fog_detail_spread = 2.7991
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p2d7p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmdih"]
+
+[node name="Test-Plane" type="Node3D"]
+
+[node name="First-Person-Controller" parent="." instance=ExtResource("1_spbnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45664, 0)
+collision_layer = 1
+collision_mask = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 20, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rf3sj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(300, 0, 0, 0, 1, 0, 0, 0, 300, 0, 0, 0)
+layers = 7
+mesh = SubResource("PlaneMesh_p2d7p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_dmdih")
+
+[node name="environment_objects" type="Node" parent="."]
+
+[node name="objects_that_chip2" parent="environment_objects" instance=ExtResource("3_f2knc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57778, -11.8363)
